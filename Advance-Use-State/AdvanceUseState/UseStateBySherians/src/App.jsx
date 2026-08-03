@@ -1,24 +1,20 @@
 import React, {useState} from 'react'
 
 const App = () => {
-  const [num, setnum] = useState({user: "Huzaifa", age: 20})
-  const buttonClick = ()=>{
-    console.log(count.user);
-    const newNum = {...num}
-    newNum.user = "Hassan"
-    setnum(newNum)
-    
-    console.log(count.age);
-    
-
+  const [first, setfirst] = useState({user: 'Huzaifa', age: 20})
+  const change = ()=>{
+      let dupObj = {...first}
+      dupObj.user = "Hassan";
+      dupObj.age = 22;
+      console.log(dupObj)
+      setfirst(dupObj)
   }
   return (
-      <>
-      <h1 className='mb-5 border-2 p-2 w-fit '>{count.user}, {count.age}</h1>
-      <button className='border-2 p-2' onClick={buttonClick}> Click</button>
-      </>
+    <div>
+      <h1>{first.user}</h1>
+      <button onClick={change}>Click</button>
+    </div>
   )
-
 }
 
 export default App
